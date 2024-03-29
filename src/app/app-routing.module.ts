@@ -1,28 +1,31 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'digimon-list',
     pathMatch: 'full'
-  },   {
+  }, 
+  {
     path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'digimon-list',
-    loadChildren: () => import('./pages/digimon-list/digimon-list.module').then( m => m.DigimonListPageModule)
+    loadChildren: () => import('./pages/digimon-list/digimon-list.module').then(m => m.DigimonListPageModule),
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
- 
+
 ];
 
 @NgModule({

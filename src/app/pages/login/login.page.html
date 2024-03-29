@@ -9,14 +9,14 @@
 <ion-content class="ion-padding">
   <div class="login-container">
     <div class="login-form">
-      <form (ngSubmit)="login()">
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
         <ion-item>
           <ion-label position="floating" style="color: black;">Correo electrónico</ion-label>
-          <ion-input type="email" [(ngModel)]="email" required></ion-input>
+          <ion-input type="email" formControlName="email" style="color: black;" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating" style="color: black;">Contraseña</ion-label>
-          <ion-input type="password" [(ngModel)]="password" required></ion-input>
+          <ion-input type="password" style="color: black;" formControlName="password" required></ion-input>
         </ion-item>
         <ion-button type="submit" expand="block">Iniciar Sesión</ion-button>
       </form>
