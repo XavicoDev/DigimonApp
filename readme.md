@@ -30,7 +30,7 @@ Este proyecto es una aplicación de ejemplo de Ionic para mostrar una lista de D
    ```bash
    npm install
    
-## Uso
+## Uso web
 
 Inicia la aplicación en tu navegador web:
 
@@ -38,7 +38,17 @@ Inicia la aplicación en tu navegador web:
    ionic serve
    ```
 
-La aplicación se abrirá automáticamente en tu navegador predeterminado.   
+La aplicación se abrirá automáticamente en tu navegador predeterminado.  
+
+## Generar APK
+
+Inicia la aplicación en tu navegador web:
+
+   ```bash
+   ionic serve
+   ```
+
+La aplicación se abrirá automáticamente en tu navegador predeterminado.  
 
 ## Tecnologías utilizadas
 

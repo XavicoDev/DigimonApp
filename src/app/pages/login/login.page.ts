@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,14 @@ export class LoginPage implements OnInit {
 
   email: string = '';
   password: string = '';
-  
+
 
   formLogin!: FormGroup;
 
   constructor(
     private userService: UserService,
-    private router: Router) { }
+    private router: Router,
+    private alertController: AlertController) { }
 
   ngOnInit() {
     this.formLogin = new FormGroup({
@@ -33,7 +35,19 @@ export class LoginPage implements OnInit {
         console.log(response);
         this.router.navigate(['/digimon-list']);
       })
-      .catch(error => console.log(error));
+      .catch(
+        async error => {
+          console.log(error);
+          const alert = await this.alertController.create({
+            header: 'Alert',
+            subHeader: 'Inicio de sesión fallida',
+            message: error,
+            buttons: ['OK'],
+          })
+
+          await alert.present()
+        }
+      );
   }
 
 }
