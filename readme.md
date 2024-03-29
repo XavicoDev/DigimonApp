@@ -12,6 +12,7 @@ Este proyecto es una aplicación de ejemplo de Ionic para mostrar una lista de D
 ## Requisitos previos
 
 - Node.js versión 20.11.1
+- Android JDK 14.0
 
 ## Instalación
 
@@ -42,11 +43,32 @@ La aplicación se abrirá automáticamente en tu navegador predeterminado.
 
 ## Generar APK
 
-Inicia la aplicación en tu navegador web:
+Recomiendo usar la extension de ionic en Visual Studio Code, a continuación están los pasos para generar el apk por comandos:
+
+1. Primero verficiar la generacion del proyecto con angular
 
    ```bash
-   ionic serve
+   ng builder
    ```
+
+2. Ejecuta copiar y luego actualizar.
+
+   ```bash
+   npx cap sync --inline
+   ```
+
+3. Construir en modo producción y copiar a las diferentes plataformas
+
+   ```bash
+   npx ng build  --configuration=production
+   npx cap copy
+   ```
+4. Abrir el proyecto de android studio, suele ser mas familiar cuando ya se ha trabajado en entornos nativos, configurando y generando el instalador con o sin firma.  
+
+   ```bash
+   npx cap open android
+   ```
+
 
 La aplicación se abrirá automáticamente en tu navegador predeterminado.  
 
@@ -79,3 +101,20 @@ La aplicación se abrirá automáticamente en tu navegador predeterminado.
 - rxjs: ~7.8.0
 - tslib: ^2.3.0
 - zone.js: ~0.14.2
+
+## Ejemplo de Uso
+
+Las siguientes capturas fueran tomadas desde la version web y con un emulador, este es un método mas rápido para ejecutar y probar las funciones, con la limitante de funciones nativas.
+
+Inicio de sesión
+![Ejecutando servidor](img/login.png)
+
+Registro de usuario
+![Ejecutando servidor](img/register.png)
+
+Lista de digimons
+![Ejecutando servidor](img/digimon_list.png)
+
+Detalles de un digimon
+![Ejecutando servidor](img/digimon_detail.png)
+
