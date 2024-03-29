@@ -6,15 +6,19 @@ import { IonicModule } from '@ionic/angular';
 
 import { DigimonListPageRoutingModule } from './digimon-list-routing.module';
 
-import { DigimonListPage } from './digimon-list.page';
+import { DigimonListPage } from './digimon-list.page'; 
+import { DigimonService } from 'src/app/services/digimon.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DigimonListPageRoutingModule
+    DigimonListPageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [DigimonListPage]
+  declarations: [DigimonListPage]  ,
+  providers: [DigimonService] 
 })
 export class DigimonListPageModule {}
