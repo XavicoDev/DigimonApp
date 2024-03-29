@@ -36,6 +36,7 @@ Inicia la aplicación en tu navegador web:
 
    ```bash
    ionic serve
+   ```
 
 La aplicación se abrirá automáticamente en tu navegador predeterminado.   
 
