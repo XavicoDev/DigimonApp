@@ -6,9 +6,10 @@ import { IonicModule } from '@ionic/angular';
 
 import { DigimonListPageRoutingModule } from './digimon-list-routing.module';
 
-import { DigimonListPage } from './digimon-list.page'; 
+import { DigimonListPage } from './digimon-list.page';
 import { DigimonService } from 'src/app/services/digimon.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DigimonViewComponent } from 'src/app/components/digimon-view/digimon-view.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
     DigimonListPageRoutingModule,
     HttpClientModule
   ],
-  declarations: [DigimonListPage]  ,
-  providers: [DigimonService] 
+  declarations: [
+    DigimonListPage,
+    DigimonViewComponent
+  ],
+  providers: [DigimonService]
 })
-export class DigimonListPageModule {}
+export class DigimonListPageModule { }

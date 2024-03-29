@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Digimon details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ digimonExtendData.name }}</ion-card-title>
+      <ion-card-subtitle>{{ digimonExtendData.id }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <img [src]="digimon.image" alt="Digimon Image">
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Levels</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let level  of digimonExtendData.levels">
+          <ion-label> {{ level.level }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <!-- <ion-button fill="clear">Action 1</ion-button>
+    <ion-button fill="clear">Action 2</ion-button> -->
+  </ion-card>
+</ion-content>

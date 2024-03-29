@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class DigimonService {
 
   private apiUrl = 'https://digi-api.com/api/v1/digimon';
+  private apiUrlSearch = 'https://digi-api.com/api/v1/digimon';
 
   constructor(private http: HttpClient) { }
 
@@ -25,5 +26,9 @@ export class DigimonService {
 
   getDigimons(pageSize: number): Observable<any>{
     return this.http.get<any>(`${this.apiUrl}?pageSize=${pageSize}`);
+  }
+
+  getDigimon(idDigimon: number): Observable<any>{
+    return this.http.get<any>(`${this.apiUrlSearch}/${idDigimon}`);
   }
 }

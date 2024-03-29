@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { DigimonViewComponent } from 'src/app/components/digimon-view/digimon-view.component';
 import { DigimonService } from 'src/app/services/digimon.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -10,12 +12,13 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DigimonListPage implements OnInit {
 
-  digimons: any[] = [];
+  digimons: any[] = []; 
 
   constructor(
     private userService: UserService,
     private router: Router,
-    private digimonService: DigimonService
+    private digimonService: DigimonService,
+    private modalController: ModalController
   ) { }
 
   ngOnInit() {
@@ -34,12 +37,22 @@ export class DigimonListPage implements OnInit {
     }
   }
 
+  async presentModal(digimon: any) {
+    const modal = await this.modalController.create({
+      component: DigimonViewComponent,
+      componentProps: {
+        digimon: digimon
+      }
+    });
+    return await modal.present();
+  }
+
   onClick() {
     this.userService.logout()
       .then(() => {
         this.router.navigate(['/login']);
       })
       .catch(error => console.log(error));
-  }
+  } 
 
 }
