@@ -107,14 +107,14 @@ La aplicación se abrirá automáticamente en tu navegador predeterminado.
 Las siguientes capturas fueran tomadas desde la version web y con un emulador, este es un método mas rápido para ejecutar y probar las funciones, con la limitante de funciones nativas.
 
 - Inicio de sesión
-![Ejecutando servidor](img/login.png)
+- ![Ejecutando servidor](img/login.png)
 
 - Registro de usuario
-![Ejecutando servidor](img/register.png)
+- ![Ejecutando servidor](img/register.png)
 
 - Lista de digimons
-![Ejecutando servidor](img/digimon_list.png)
+- ![Ejecutando servidor](img/digimon_list.png)
 
 - Detalles de un digimon
-![Ejecutando servidor](img/digimon_detail.png)
+- ![Ejecutando servidor](img/digimon_detail.png)
 
