@@ -83,4 +83,9 @@ export class DigimonListPage implements OnInit {
       .catch(error => console.log(error));
   } 
 
+  onImageError(event: any) {
+    event.target.src = '../../assets/img/File_not_found.jpg';
+  }
+  
+
 }

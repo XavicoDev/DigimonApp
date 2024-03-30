@@ -13,7 +13,7 @@
     <ion-row>
       <ion-col size="6" size-md="4" size-lg="2" *ngFor="let digimon of digimons" class="custom-col">
         <ion-card (click)="presentModal(digimon)">
-          <img [src]="digimon.image" alt="Digimon Image">
+          <img [src]="digimon.image" [alt]="digimon.name" (error)="onImageError($event)">
           <ion-card-header>
             <ion-card-title>{{ digimon.name }}</ion-card-title>
           </ion-card-header>
