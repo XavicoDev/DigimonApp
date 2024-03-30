@@ -1,13 +1,14 @@
 # Digimons App
 
-Este proyecto es una aplicación de ejemplo de Ionic para mostrar una lista de Digimons y proporcionar información detallada sobre cada uno de ellos a través de un modal.
+Este proyecto es una aplicación desarrollada con Ionic y Angular, que aprovecha los servicios de Firebase para gestionar la autenticación de usuarios. Además, utiliza la API pública de Digimons para obtener información detallada sobre estos personajes de ficción.
 
 ## Funcionalidades
 
-- Lista de Digimons con cards interactivos.
-- Modal con información detallada sobre cada Digimon.
-- Consumo de datos de un servicio web (API de Digimons).
-- Autenticación de usuarios a través de un servicio de Firebase.
+1. Autenticación de Usuarios mediante Firebase: La aplicación utiliza servicios de Firebase para la autenticación de usuarios. Esto permite a los usuarios registrarse, iniciar sesión y gestionar sus cuentas de manera segura.
+
+2. Lista de Digimons Interactiva: La aplicación muestra una lista de Digimons utilizando tarjetas interactivas que permiten a los usuarios explorar fácilmente los diferentes personajes.
+
+3. Modal con Detalles de Digimon: Los usuarios pueden ver información detallada sobre cada Digimon mediante un modal que se despliega al seleccionar un Digimon específico en la lista.
 
 ## Requisitos previos
 
