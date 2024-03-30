@@ -33,18 +33,33 @@ export class LoginPage implements OnInit {
     this.userService.login(this.formLogin.value)
       .then(response => {
         console.log(response);
-        const results = response.user;
-        console.log(results);
-        results.emailVerified ? this.router.navigate(['/digimon-list']): alert("Por favor verifique su correo electrónico para iniciar sesión.");
-         
+        const user = response.user;
+        console.log(user);
+        user.emailVerified ?
+          this.router.navigate(['/digimon-list']) :
+          alert(`Usuario ${user.displayName}, por favor verifique su correo electrónico para iniciar sesión.`);
       })
       .catch(
         async error => {
-          console.log(error);
+          console.log(error.code);
+          let errorMessage: string;
+          switch (error.code) {
+            case 'auth/invalid-credential':
+              errorMessage = 'Credenciales inválidas.';
+              break;
+            case 'auth/user-not-found':
+              errorMessage = 'Usuario no encontrado';
+              break;
+            case 'auth/wrong-password':
+              errorMessage = 'Contraseña incorrecta';
+              break;
+            default:
+              errorMessage = 'Error al iniciar sesión. Por favor, inténtalo de nuevo más tarde.';
+          }
           const alert = await this.alertController.create({
-            header: 'Alert',
+            header: 'Alerta!',
             subHeader: 'Inicio de sesión fallida',
-            message: error,
+            message: errorMessage,
             buttons: ['OK'],
           })
 
