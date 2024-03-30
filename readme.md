@@ -108,7 +108,7 @@ A continuación se presentan capturas de pantalla tomadas desde un dispositivo A
 
 1. Usuario no registrado
 
-  ![usuario no registrado](img/01_unregistered_user.jpeg){:width="250px"}
+   <img src="img/01_unregistered_user.jpeg" alt="usuario no registrado" width="250"/>
 - Esta captura muestra la pantalla inicial de la aplicación para un usuario que aún no ha registrado una cuenta.
 
 2. Registro de usuario
