@@ -106,15 +106,24 @@ La aplicación se abrirá automáticamente en tu navegador predeterminado.
 
 Las siguientes capturas fueran tomadas desde la version web y con un emulador, este es un método mas rápido para ejecutar y probar las funciones, con la limitante de funciones nativas.
 
-- Inicio de sesión
-- ![Ejecutando servidor](img/login.png)
+- Usuario no registrado
+  ![usuario no registrado](img/01_unregistered_user.jpeg)
 
-- Registro de usuario
-- ![Ejecutando servidor](img/register.png)
+- Registrar usuario
+- ![Registrar usuario](img/02_user_register.jpeg)
 
-- Lista de digimons
-- ![Ejecutando servidor](img/digimon_list.png)
+- Intentar ingresar sin validar correo
+- ![Ingresar sin validar correo](img/03_try_to_enter_without_validating_email)
+
+- Recepción del correo de verificación
+- ![Recepción del correo de verificación](img/04_receipt_of_verification_email.jpeg)
+
+- Verificación de correo exitosa
+- ![Verificación de correo exitosa](img/05_email_verification_successful)
+
+- Listado de digimons
+- ![Listado de digimons](img/06_digimon_list.jpeg)
 
 - Detalles de un digimon
-- ![Ejecutando servidor](img/digimon_detail.png)
+- ![Listado de digimons](img/07_digimon_detail.jpeg)
 
