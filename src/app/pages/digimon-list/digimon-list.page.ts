@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DigimonListPage implements OnInit {
 
-  digimons: any[] = []; 
+  digimons: any[] = [];
   pageable: any;
 
   constructor(
@@ -29,36 +29,36 @@ export class DigimonListPage implements OnInit {
   async loadDigimons() {
     try {
       // this.digimons = await this.digimonService.getDigimons(20);
-      this.digimonService.getDigimons('https://digi-api.com/api/v1/digimon').subscribe((data: any) =>{
+      this.digimonService.getDigimons('https://digi-api.com/api/v1/digimon').subscribe((data: any) => {
         this.digimons = data.content;
         this.pageable = data.pageable;
-        console.log(this.digimons); 
+        console.log(this.digimons);
       });
     } catch (error) {
       console.error('Error al cargar los Digimons:', error);
     }
   }
 
-  previousPage(){
+  previousPage() {
     try {
       // this.digimons = await this.digimonService.getDigimons(20);
-      this.digimonService.getDigimons(this.pageable.previousPage).subscribe((data: any) =>{
+      this.digimonService.getDigimons(this.pageable.previousPage).subscribe((data: any) => {
         this.digimons = data.content;
         this.pageable = data.pageable;
-        console.log(this.digimons); 
+        console.log(this.digimons);
       });
     } catch (error) {
       console.error('Error al cargar los Digimons:', error);
     }
   }
 
-  nextPage(){
+  nextPage() {
     try {
       // this.digimons = await this.digimonService.getDigimons(20);
-      this.digimonService.getDigimons(this.pageable.nextPage).subscribe((data: any) =>{
+      this.digimonService.getDigimons(this.pageable.nextPage).subscribe((data: any) => {
         this.digimons = data.content;
         this.pageable = data.pageable;
-        console.log(this.digimons); 
+        console.log(this.digimons);
       });
     } catch (error) {
       console.error('Error al cargar los Digimons:', error);
@@ -75,17 +75,22 @@ export class DigimonListPage implements OnInit {
     return await modal.present();
   }
 
-  onClick() {
-    this.userService.logout()
-      .then(() => {
-        this.router.navigate(['/login']);
+  async logout() {
+    this.userService.logout().
+      then(() => {
+        this.router.navigate(['/digimon-list']);
+        // Refresca la página actual en caso que no recargue la vista
+        window.location.reload();
+
       })
-      .catch(error => console.log(error));
-  } 
+      .catch((error) => {
+        alert('Error al cerrar sesión: ' + error);
+      });;
+  }
 
   onImageError(event: any) {
     event.target.src = '../../assets/img/File_not_found.jpg';
   }
-  
+
 
 }

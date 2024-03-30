@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { FirebaseError } from '@angular/fire/app';
 import { Auth, GoogleAuthProvider, UserCredential, createUserWithEmailAndPassword, sendEmailVerification, sendSignInLinkToEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from '@angular/fire/auth';
 import { generateFirebaseAuthErrorMessage } from './Firebase/ErrorHandler';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private auth: Auth) { }
+  constructor(private auth: Auth,
+    private router: Router,) { }
 
   register3({ email, password, name }: any) {
     return createUserWithEmailAndPassword(this.auth, email, password);
@@ -29,7 +31,6 @@ export class UserService {
       if (error instanceof FirebaseError) {
         generateFirebaseAuthErrorMessage(error);
       }
-      console.error(error);
       return false;
     } finally {
       return true;
@@ -39,7 +40,6 @@ export class UserService {
 
   async login({ email, password }: any): Promise<UserCredential> {
     const userCredential = await signInWithEmailAndPassword(this.auth, email, password);
-
     return userCredential
   }
 
@@ -47,7 +47,13 @@ export class UserService {
     return signInWithPopup(this.auth, new GoogleAuthProvider());
   }
 
-  logout() {
-    return signOut(this.auth);
+  async logout(): Promise<void> {
+    try {
+      return await signOut(this.auth);
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
   }
+
 }
