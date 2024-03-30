@@ -26,16 +26,10 @@ export class RegisterPage implements OnInit {
       password: new FormControl()
     })
   }
-
   
-
-  onSubmit() {
-    this.userService.register(this.formReg.value)
-      .then(response => {
-        console.log(response);
-        this.router.navigate(['/login']);
-      })
-      .catch(error => console.log(error));
+  async onSubmit() {
+    const successfulCreation = await this.userService.register(this.formReg.value);
+    successfulCreation? this.router.navigate(['/login']): null 
   }
 
 }

@@ -33,7 +33,10 @@ export class LoginPage implements OnInit {
     this.userService.login(this.formLogin.value)
       .then(response => {
         console.log(response);
-        this.router.navigate(['/digimon-list']);
+        const results = response.user;
+        console.log(results);
+        results.emailVerified ? this.router.navigate(['/digimon-list']): alert("Por favor verifique su correo electrónico para iniciar sesión.");
+         
       })
       .catch(
         async error => {
