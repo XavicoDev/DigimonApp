@@ -4,11 +4,11 @@ Este proyecto es una aplicación desarrollada con Ionic y Angular, que aprovecha
 
 ## Funcionalidades
 
-1. Autenticación de Usuarios mediante Firebase: La aplicación utiliza servicios de Firebase para la autenticación de usuarios. Esto permite a los usuarios registrarse, iniciar sesión y gestionar sus cuentas de manera segura.
+1. **Autenticación de usuarios mediante Firebase:** La aplicación utiliza servicios de Firebase para la autenticación de usuarios. Esto permite a los usuarios registrarse, iniciar sesión y gestionar sus cuentas de manera segura.
 
-2. Lista de Digimons Interactiva: La aplicación muestra una lista de Digimons utilizando tarjetas interactivas que permiten a los usuarios explorar fácilmente los diferentes personajes.
+2. **Lista de Digimons interactiva:** La aplicación muestra una lista de Digimons utilizando tarjetas interactivas que permiten a los usuarios explorar fácilmente los diferentes personajes.
 
-3. Modal con Detalles de Digimon: Los usuarios pueden ver información detallada sobre cada Digimon mediante un modal que se despliega al seleccionar un Digimon específico en la lista.
+3. **Modal con detalles de Digimon:** Los usuarios pueden ver información detallada sobre cada Digimon mediante un modal que se despliega al seleccionar un Digimon específico en la lista.
 
 ## Requisitos previos
 
