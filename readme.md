@@ -104,26 +104,39 @@ La aplicación se abrirá automáticamente en tu navegador predeterminado.
 
 ## Ejemplo de Uso
 
-Las siguientes capturas fueran tomadas desde la version web y con un emulador, este es un método mas rápido para ejecutar y probar las funciones, con la limitante de funciones nativas.
+A continuación se presentan capturas de pantalla tomadas desde un dispositivo Android en el que se instaló la última versión del código fuente. Cada captura ilustra un paso específico del flujo de la aplicación:
 
-- Usuario no registrado
-  ![usuario no registrado](img/01_unregistered_user.jpeg)
+1. Usuario no registrado
 
-- Registrar usuario
-  ![Registrar usuario](img/02_user_register.jpeg)
+  ![usuario no registrado](img/01_unregistered_user.jpeg){:width="250px"}
+- Esta captura muestra la pantalla inicial de la aplicación para un usuario que aún no ha registrado una cuenta.
 
-- Intentar ingresar sin validar correo
-  ![Ingresar sin validar correo](img/03_try_to_enter_without_validating_email.jpeg)
+2. Registro de usuario
 
-- Recepción del correo de verificación
+  ![Registro de usuario](img/02_user_register.jpeg)
+- En esta pantalla, el usuario completa el formulario de registro proporcionando la información necesaria, como nombre de usuario, correo electrónico y contraseña.
+
+3. Intento de ingresar sin validar correo
+
+  ![Intento de ingresar sin validar correo](img/03_try_to_enter_without_validating_email.jpeg)
+-   La captura muestra el mensaje de error que aparece cuando un usuario intenta acceder a la aplicación antes de confirmar su dirección de correo electrónico.
+
+4. Recepción del correo de verificación
+
   ![Recepción del correo de verificación](img/04_receipt_of_verification_email.jpeg)
+- Se muestra la bandeja de entrada del correo electrónico del usuario, donde se ha recibido un mensaje de verificación de la aplicación.
 
-- Verificación de correo exitosa
+5. Verificación de correo exitosa
+
   ![Verificación de correo exitosa](img/05_email_verification_successful.jpeg)
+- La captura muestra la pantalla de la aplicación después de que el usuario ha hecho clic en el enlace de verificación en el correo electrónico, confirmando con éxito su dirección de correo electrónico.  
 
-- Listado de digimons
+6. Listado de Digimons
+
   ![Listado de digimons](img/06_digimon_list.jpeg)
+- Aquí se muestra la lista de Digimons disponibles en la aplicación, que el usuario puede explorar.
 
-- Detalles de un digimon
+7. Detalles de un Digimon
   ![Listado de digimons](img/07_digimon_detail.jpeg)
+- La captura muestra la pantalla de detalles de un Digimon específico, donde se proporciona información detallada sobre ese Digimon en particular.
 
