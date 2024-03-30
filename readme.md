@@ -110,20 +110,20 @@ Las siguientes capturas fueran tomadas desde la version web y con un emulador, e
   ![usuario no registrado](img/01_unregistered_user.jpeg)
 
 - Registrar usuario
-- ![Registrar usuario](img/02_user_register.jpeg)
+  ![Registrar usuario](img/02_user_register.jpeg)
 
 - Intentar ingresar sin validar correo
-- ![Ingresar sin validar correo](img/03_try_to_enter_without_validating_email)
+  ![Ingresar sin validar correo](img/03_try_to_enter_without_validating_email.jpeg)
 
 - Recepción del correo de verificación
-- ![Recepción del correo de verificación](img/04_receipt_of_verification_email.jpeg)
+  ![Recepción del correo de verificación](img/04_receipt_of_verification_email.jpeg)
 
 - Verificación de correo exitosa
-- ![Verificación de correo exitosa](img/05_email_verification_successful)
+  ![Verificación de correo exitosa](img/05_email_verification_successful.jpeg)
 
 - Listado de digimons
-- ![Listado de digimons](img/06_digimon_list.jpeg)
+  ![Listado de digimons](img/06_digimon_list.jpeg)
 
 - Detalles de un digimon
-- ![Listado de digimons](img/07_digimon_detail.jpeg)
+  ![Listado de digimons](img/07_digimon_detail.jpeg)
 
