@@ -13,6 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 export class DigimonListPage implements OnInit {
 
   digimons: any[] = []; 
+  pageable: any;
 
   constructor(
     private userService: UserService,
@@ -28,8 +29,35 @@ export class DigimonListPage implements OnInit {
   async loadDigimons() {
     try {
       // this.digimons = await this.digimonService.getDigimons(20);
-      this.digimonService.getDigimons(20).subscribe((data: any) =>{
-        this.digimons = data.content;//Guardo el data del suscribe y lo asocio
+      this.digimonService.getDigimons('https://digi-api.com/api/v1/digimon').subscribe((data: any) =>{
+        this.digimons = data.content;
+        this.pageable = data.pageable;
+        console.log(this.digimons); 
+      });
+    } catch (error) {
+      console.error('Error al cargar los Digimons:', error);
+    }
+  }
+
+  previousPage(){
+    try {
+      // this.digimons = await this.digimonService.getDigimons(20);
+      this.digimonService.getDigimons(this.pageable.previousPage).subscribe((data: any) =>{
+        this.digimons = data.content;
+        this.pageable = data.pageable;
+        console.log(this.digimons); 
+      });
+    } catch (error) {
+      console.error('Error al cargar los Digimons:', error);
+    }
+  }
+
+  nextPage(){
+    try {
+      // this.digimons = await this.digimonService.getDigimons(20);
+      this.digimonService.getDigimons(this.pageable.nextPage).subscribe((data: any) =>{
+        this.digimons = data.content;
+        this.pageable = data.pageable;
         console.log(this.digimons); 
       });
     } catch (error) {

@@ -1,26 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header >
   <ion-toolbar>
     <ion-title>digimon-list</ion-title>
-
     <ion-buttons slot="end">
       <ion-button (click)="onClick()"> Salir </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <!-- <ion-list>
-    <ion-item *ngFor="let digimon of digimons">
-      <ion-thumbnail slot="start">
-        <img [src]="digimon.image" alt="Digimon Image">
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ digimon.name }}</h2> 
-      </ion-label>
-    </ion-item>
-  </ion-list> -->
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-grid>
+
     <ion-row>
+      <ion-col size="6" size-md="4" size-lg="2" *ngFor="let digimon of digimons" class="custom-col">
+        <ion-card (click)="presentModal(digimon)">
+          <img [src]="digimon.image" alt="Digimon Image">
+          <ion-card-header>
+            <ion-card-title>{{ digimon.name }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+    <!-- <ion-row>
       <ion-col size="4" *ngFor="let digimon of digimons">
         <ion-card (click)="presentModal(digimon)">
           <img [src]="digimon.image" alt="Digimon Image"> 
@@ -29,6 +30,22 @@
           </ion-card-header> 
         </ion-card>
       </ion-col>
-    </ion-row>
-  </ion-grid> 
+    </ion-row> -->
+  </ion-grid>
+
 </ion-content>
+<ion-footer class="footer">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="previousPage()" [disabled]="pageable.currentPage === 0">
+        Anterior
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ pageable.currentPage + 1 }} de {{ pageable.totalPages }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="nextPage()" [disabled]="pageable.currentPage + 1 === pageable.totalPages">
+        Siguiente
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

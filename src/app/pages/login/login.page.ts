@@ -32,16 +32,13 @@ export class LoginPage implements OnInit {
   onSubmit() {
     this.userService.login(this.formLogin.value)
       .then(response => {
-        console.log(response);
         const user = response.user;
-        console.log(user);
         user.emailVerified ?
           this.router.navigate(['/digimon-list']) :
           alert(`Usuario ${user.displayName}, por favor verifique su correo electrónico para iniciar sesión.`);
       })
       .catch(
         async error => {
-          console.log(error.code);
           let errorMessage: string;
           switch (error.code) {
             case 'auth/invalid-credential':
@@ -62,7 +59,6 @@ export class LoginPage implements OnInit {
             message: errorMessage,
             buttons: ['OK'],
           })
-
           await alert.present()
         }
       );

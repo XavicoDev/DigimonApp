@@ -5,9 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class DigimonService {
+export class DigimonService { 
 
-  private apiUrl = 'https://digi-api.com/api/v1/digimon';
   private apiUrlSearch = 'https://digi-api.com/api/v1/digimon';
 
   constructor(private http: HttpClient) { }
@@ -24,8 +23,8 @@ export class DigimonService {
   //   }
   // }
 
-  getDigimons(pageSize: number): Observable<any>{
-    return this.http.get<any>(`${this.apiUrl}?pageSize=${pageSize}`);
+  getDigimons(apiUrl: string): Observable<any>{
+    return this.http.get<any>(`${ apiUrl} `);
   }
 
   getDigimon(idDigimon: number): Observable<any>{
